@@ -1,0 +1,35 @@
+Entorno virtual
+Definimos el nombre del entorno virtual en este caso "myenv". Puedes usar cualquier otro nombre, pero sólo utiliza minúsculas y no incluyas espacio.
+
+python3 -m venv myvenv
+
+Este código crea un directorio llamado myvenv (o cualquier nombre que hayas elegido) que contiene nuestro entorno virtual (básicamente un montón de archivos y carpetas). Donde trabajaremos
+
+Ejecutamos el entorno virtual
+source myvenv/bin/activate
+
+Instalamos dependencias
+pip install -r requirements.txt
+
+
+Estructura aplicacion
+https://www.youtube.com/watch?v=TTYdcZ4aYz8
+https://github.com/ELC/flask-boilerplate
+
+env
+Guarda las variables de entorno y no deben ser subidas a los repositorios
+python-dotenv
+Libreria para usar las variables de entorno donde se guardarán las claves neccesarias para hacer funcioanr el programa
+Estarán guardados en el ordenador
+
+
+Spotipy
+Spotipy is a lightweight Python library for the Spotify Web API.
+With Spotipy you get full access to all of the music data provided by the Spotify platform.
+
+Api Referencia
+https://spotipy.readthedocs.io/en/2.21.0/#api-reference
+
+Ejemplos de código
+https://github.com/spotipy-dev/spotipy/tree/master/examples
+
