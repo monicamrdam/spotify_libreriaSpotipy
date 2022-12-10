@@ -2,6 +2,8 @@ from flask import Flask
 from flask import jsonify
 from config import Config
 from data_spotipy.spotify_service import response
+from data_spotipy.pruebas import response_pruebas
+
 
 app = Flask(__name__)
 
@@ -21,4 +23,9 @@ def home():
 def estopa():
     #return jsonify(response.json())
     return response
+
+@app.route ('/pruebas')
+def estopa_pruebas():
+    #return jsonify(response.json())
+    return response_pruebas
 
