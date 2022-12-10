@@ -1,8 +1,17 @@
+import os
+from dotenv import load_dotenv
 
-class Config:
-    clientID = clientID
-    clientSecret =clientSecret
+#Cargamos las variables de entorno en memoria
+load_dotenv()
 
-    SERVER_NAME ='127.0.0.1:3000'
+#Clase para definir la configuración de la aplicación
+class Config():
+    SERVER_NAME= '127.0.0.1:3000'
     DEBUG= True
+
+    clientID= os.environ.get('SPOTIPY_CLIENT_ID', '')
+    clientSecret= os.environ.get('SPOTIPY_CLIENT_SECRET','')
+
+
+
 
