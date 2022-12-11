@@ -1,7 +1,7 @@
 import spotipy
 from config import Config
 from spotipy.oauth2 import SpotifyClientCredentials
-from data_spotipy.spotify_client import Artist
+from data_spotipy.spotify_client import Artist, Top_Tracks
 
 def clienId():
     clientID = Config.clientID
@@ -36,7 +36,21 @@ def artist(urn):
     return Estopa
 
 
+def artist_top_tracks(uri):
+    allTracks=[]
+    results = conect().artist_top_tracks(uri)
+    for track in results['tracks'][:5]:
+        tracks_Datos= Top_Tracks(track['name'], track['popularity'], track['preview_url'])
+        Estopa_Track={
+            'name': tracks_Datos.name,
+            'popularity': tracks_Datos.popularity,
+            'audioSong': tracks_Datos.audioSong,
+        }
+        allTracks.append(Estopa_Track)
+    return allTracks
+
+#artist(uri_artist())
 
 
-response = artist(uri_artist())
+response=artist_top_tracks(uri_artist())
 
