@@ -13,7 +13,6 @@ sp = spotipy.Spotify(client_credentials_manager=client_credential_manager)
 
 estopa = 'spotify:artist:5ZqnEfVdEGmoPxtELhN7ai'
 
-results = sp.artist_top_tracks(estopa)
-results.keys()
 
-response = results['tracks']
+response =''
+
