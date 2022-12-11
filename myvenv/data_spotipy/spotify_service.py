@@ -49,8 +49,14 @@ def artist_top_tracks(uri):
         allTracks.append(Estopa_Track)
     return allTracks
 
-#artist(uri_artist())
+
+def mostrar_todosdatos():
+    todosdatos={
+        'informacion artista':artist(uri_artist()),
+        'informacion top track': artist_top_tracks(uri_artist())
+    }
+    return  todosdatos
 
 
-response=artist_top_tracks(uri_artist())
+response=mostrar_todosdatos()
 
