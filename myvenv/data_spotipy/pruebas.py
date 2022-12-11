@@ -85,7 +85,6 @@ def recommendation():
         print(i["name"])
 
 
-recommendation()
 def track(urn):
     urn = 'spotify:track:0Svkvt5I79wficMFgaqEQJ'
     results = conect().track(urn)

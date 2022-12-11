@@ -1,18 +1,42 @@
 import spotipy
 from config import Config
 from spotipy.oauth2 import SpotifyClientCredentials
+from data_spotipy.spotify_client import Artist
+
+def clienId():
+    clientID = Config.clientID
+    return clientID
+def clientSecret():
+    clientSecret = Config.clientSecret
+    return clientSecret
+def conect():
+    client_credential_manager = SpotifyClientCredentials(client_id=clienId(), client_secret=clientSecret())
+    sp = spotipy.Spotify(client_credentials_manager=client_credential_manager)
+    return sp
 
 
-clientID = Config.clientID
-clientSecret = Config.clientSecret
+def uri_artist():
+    estopa = 'spotify:artist:5ZqnEfVdEGmoPxtELhN7ai'
+    return estopa
 
 
 
-client_credential_manager = SpotifyClientCredentials(client_id=clientID, client_secret=clientSecret)
-sp = spotipy.Spotify(client_credentials_manager=client_credential_manager)
+def artist(urn):
+    gemderList=[]
+    results = conect().artist(urn)
+    for genres in results['genres']:
+        gemderList.append(genres)
+    estopa_datos=Artist(results['name'], results['popularity'], results['uri'], gemderList)
+    Estopa={
+        'name': estopa_datos.name,
+        'popularity': estopa_datos.popularity,
+        'uri': estopa_datos.uri,
+        'gender':estopa_datos.gender
+    }
+    return Estopa
 
-estopa = 'spotify:artist:5ZqnEfVdEGmoPxtELhN7ai'
 
 
-response =''
+
+response = artist(uri_artist())
 
